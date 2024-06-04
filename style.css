@@ -302,7 +302,7 @@ body {
     transform: translate(-8%, -50%);
     width: 20px;
     height: 20px;
-    background-image: url('/assets/images/icon-checkbox-check.svg');
+    background-image: url('./assets/images/icon-checkbox-check.svg');
     /* Path to your custom image */
     background-size: cover;
     background-repeat: no-repeat;
