@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200..800&display=swap');
+
+:root {
+    /* Primary colors */
+    --light-green: hsl(148, 38%, 91%);
+    --green: hsl(169, 82%, 27%);
+    --red: hsl(0, 65%, 56%);
+    /* Neutral colors */
+    --white: hsl(0, 0%, 100%);
+    --medium-gray: hsl(156, 15%, 59%);
+    --dark-gray: hsl(187, 24%, 22%);
+    /* Font size */
+    --labels: 16px;
+    /* Font weights */
+    --regular: 400;
+    --bold: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: var(--labels);
+    color: var(--dark-gray);
+    background-color: var(--light-green);
+    overflow: auto;
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 40px);
+    width: 100%;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: var(--labels);
+    font-weight: var(--bold);
+    color: var(--dark-gray);
+}
+
+.form-group input:not([type="checkbox"]):not([type="radio"]),
+.form-group textarea {
+    width: 100%;
+}
+
+.option-group input[type="radio"]+label {
+    cursor: pointer;
+}
+
+.form-group:not(:has(input[type="checkbox"])) label span:nth-child(2) {
+    color: var(--red);
+}
+
+.form-group:has(input[type="checkbox"]) label span:nth-child(3) {
+    color: var(--red);
+}
+
+.form-group h1 {
+    font-size: 24px;
+    font-weight: var(--bold);
+    color: var(--dark-gray);
+}
+
+.field-group,
+.radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.option-group {
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.option-group:hover {
+    background-color: var(--light-green);
+}
+
+.option-group:has(input:checked) {
+    background-color: var(--light-green);
+}
+
+
+.field-group input,
+.form-group textarea,
+.form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--medium-gray);
+    font-size: var(--labels);
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.field-group input:focus,
+.form-group textarea:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+.field-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--medium-gray);
+}
+
+.field-group label,
+.form-group label {
+    font-weight: var(--bold);
+}
+
+.error-message {
+    color: var(--red);
+    font-size: 14px;
+    font-weight: var(--bold);
+}
+
+.btn {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: var(--labels);
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: var(--bold);
+}
+
+.btn:hover {
+    background-color: var(--light-green);
+    color: var(--green);
+}
+
+.success {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1s ease-in-out;
+    color: var(--white);
+    gap: 10px;
+}
+
+.success .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.success .header p {
+    color: var(--white);
+    width: 100%;
+}
+
+.success p {
+    display: flex;
+    color: var(--medium-gray);
+    font-size: var(--labels);
+    font-weight: var(--bold);
+    text-align: center;
+    gap: 10px;
+}
+
+.success span {
+    color: var(--dark-gray);
+}
+
+.success a,
+.attribution a {
+    color: var(--green);
+    font-weight: var(--bold);
+    text-decoration: none;
+}
+
+.success a:hover,
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+.success button {
+    background-color: transparent;
+    color: var(--green);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: var(--labels);
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: var(--bold);
+    width: fit-content;
+}
+
+.success button:hover span {
+    transform: rotate(90deg);
+}
+
+.success button:focus {
+    outline: none;
+}
+
+.success button:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.attribution {
+    font-size: var(--labels);
+    color: var(--medium-gray);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Custom Checkbox Styling */
+.form-group input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.form-group input[type="checkbox"]+span {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.form-group input[type="checkbox"]+span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: var(--light-green);
+    border: 2px solid var(--medium-gray);
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-group input[type="checkbox"]:checked+span::before {
+    background-color: var(--white);
+    border-color: var(--green);
+}
+
+.form-group input[type="checkbox"]:checked+span::after {
+    content: '';
+    position: absolute;
+    right: 93%;
+    top: 50%;
+    transform: translate(-8%, -50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('/assets/images/icon-checkbox-check.svg');
+    /* Path to your custom image */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 375px) {
+    .container {
+        height: 100vh;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .success {
+        width: 90%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
