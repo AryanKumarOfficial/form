@@ -2,84 +2,94 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
-  <title>Frontend Mentor | Contact form</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Frontend Mentor | Contact form to get in touch with us"/>
+    <meta name="keywords"
+          content="html, css, javascript, frontend, frontend mentor, contact form, get in touch, support"/>
+    <meta name="author" content="Aryan Kumar"/>
+    <meta property="og:title" content="Frontend Mentor | Contact form"/>
+    <meta property="og:description"
+          content="Get in touch with us through our contact form. We are here to assist you with any inquiries or support needs."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.yourwebsite.com/contact"/>
+    <meta property="og:image" content="https://www.yourwebsite.com/assets/images/contact-form-og-image.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"/>
+    <title>Contact Us | Frontend Mentor</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="contact-form">
-        <h1>Contact Us</h1>
-        <form id="contactForm" method="post">
-          <div class="field-group">
-            <div class="form-group">
-              <label for="first-name"><span>First Name</span> <span>*</span></label>
-              <input type="text" id="first-name" name="first-name" />
-              <div class="error-message" id="error-first-name"></div>
+<main class="container">
+    <article class="card">
+        <section class="contact-form">
+            <h1>Contact Us</h1>
+            <form id="contactForm" method="post">
+                <div class="field-group">
+                    <div class="form-group">
+                        <label for="first-name"><span>First Name</span> <span>*</span></label>
+                        <input type="text" id="first-name" name="first-name"/>
+                        <div class="error-message" id="error-first-name"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name"><span>Last Name</span> <span>*</span></label>
+                        <input type="text" id="last-name" name="last-name"/>
+                        <div class="error-message" id="error-last-name"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email"><span>Email Address</span> <span>*</span></label>
+                    <input type="email" id="email" name="email"/>
+                    <div class="error-message" id="error-email"></div>
+                </div>
+                <div class="form-group">
+                    <label><span>Query Type</span> <span>*</span></label>
+                    <div class="radio-group">
+                        <div class="option-group">
+                            <input type="radio" id="general" name="query" value="General"/>
+                            <label for="general">General Enquiry</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" id="support" name="query" value="Support"/>
+                            <label for="support">Support Enquiry</label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="error-query"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message"><span>Message</span> <span>*</span></label>
+                    <textarea id="message" name="message"></textarea>
+                    <div class="error-message" id="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="terms">
+                        <input type="checkbox" id="terms" name="terms"/>
+                        <span>I consent to being contacted by the team</span>
+                        <span>*</span>
+                    </label>
+                    <div class="error-message" id="error-terms"></div>
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="success" class="success">
+            <header class="header">
+                <img src="./assets/images/icon-success-check.svg" alt="Success Check Icon"/>
+                <p>Message Sent</p>
+            </header>
+            <div class="content">
+                <p>Thanks for completing the form. We will be in touch soon!</p>
             </div>
-            <div class="form-group">
-              <label for="last-name"><span>Last Name</span> <span>*</span></label>
-              <input type="text" id="last-name" name="last-name" />
-              <div class="error-message" id="error-last-name"></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email"><span>Email Address</span> <span>*</span></label>
-            <input type="email" id="email" name="email" />
-            <div class="error-message" id="error-email"></div>
-          </div>
-          <div class="form-group">
-            <label><span>Query Type</span> <span>*</span></label>
-            <div class="radio-group">
-              <div class="option-group">
-                <input type="radio" id="general" name="query" value="General" />
-                <label for="general">General Enquiry</label>
-              </div>
-              <div class="option-group">
-                <input type="radio" id="support" name="query" value="Support" />
-                <label for="support">Support Enquiry</label>
-              </div>
-            </div>
-            <div class="error-message" id="error-query"></div>
-          </div>
-          <div class="form-group">
-            <label for="message"><span>Message</span> <span>*</span></label>
-            <textarea id="message" name="message"></textarea>
-            <div class="error-message" id="error-message"></div>
-          </div>
-          <div class="form-group">
-            <label for="terms">
-              <input type="checkbox" id="terms" name="terms" />
-              <span>I consent to being contacted by the team</span>
-              <span>*</span>
-            </label>
-            <div class="error-message" id="error-terms"></div>
-          </div>
-          <button class="btn" type="submit">Submit</button>
-        </form>
-      </div>
-      <div id="success" class="success">
-        <div class="header">
-          <img src="./assets/images/icon-success-check.svg" alt="check" />
-          <p>Message Sent</p>
-        </div>
-        <div class="content">
-          <p>Thanks for completing the form. We will be in touch soon!</p>
-        </div>
-      </div>
-      <div class="attribution">
-        Challenge by
-        <a target="_blank" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by
-        <a target="_blank" href="https://www.github.com/aryan-ji">Aryan Kumar</a>.
-      </div>
-    </div>
-  </div>
+        </section>
+        <footer class="attribution">
+            Challenge by
+            <a target="_blank" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by
+            <a target="_blank" href="https://www.github.com/aryankumarofficial">Aryan Kumar</a>.
+        </footer>
+    </article>
+</main>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

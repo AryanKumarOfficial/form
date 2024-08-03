@@ -46,15 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (validateForm(data)) {
             console.log(data);
-            successMessage.style.display = 'flex';
+            successMessage.style.opacity = "1";
+            successMessage.style.translateY = 0;
             form.reset();
             setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
+                successMessage.style.opacity = '0';
+            }, 3000);
         }
     });
 
     closeBtn?.addEventListener('click', () => {
-        successMessage.style.display = 'none';
+        successMessage.style.opacity = "0";
     });
 });
